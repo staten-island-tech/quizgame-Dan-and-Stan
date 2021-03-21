@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./scss/main.scss">
+    <link rel="stylesheet" type="text/css" href="c5a487740cbe25559d2a5d6f92b16334">
 
 </head>
 <body>
-    <script src="./js/index.js"></script>
+    <script src="ad96325dc557090d8a9f76a60067201c"></script>
     <div id="quiz"></div>
     <button id="submit">Submit Quiz</button>
     <div id="results"></div>    
