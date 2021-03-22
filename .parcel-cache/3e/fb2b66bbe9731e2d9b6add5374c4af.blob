@@ -1,0 +1,9 @@
+console.log("connected");
+
+var questions = [
+  {
+    prompt: "What color are oranges?\n(a) Red/Green\n (b) Purple",
+  },
+];
+
+var score;

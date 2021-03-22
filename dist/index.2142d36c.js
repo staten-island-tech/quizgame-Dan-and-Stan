@@ -140,9 +140,9 @@
       this[globalName] = mainExports;
     }
   }
-})({"2NIvX":[function(require,module,exports) {
+})({"1ZwPL":[function(require,module,exports) {
 var HMR_HOST = null;
-var HMR_PORT = 50322;
+var HMR_PORT = 60589;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d751713988987e9331980363e24189ce";
 module.bundle.HMR_BUNDLE_ID = "062e9a7565ca912a5f7d6b832142d36c";
@@ -444,6 +444,32 @@ id) /*: string*/
 },{}],"3L8AI":[function(require,module,exports) {
 console.log("connected");
 
-},{}]},["2NIvX","3L8AI"], "3L8AI", "parcelRequire0a55")
+// these are the questions and answers for the quiz
+var questions = [
+  {
+    prompt: "What color are oranges?\n(a) Orange\n (b) Purple",
+    answer: "a",
+  },
+];
+
+// this variable is the total amount of right answers
+var score = 0;
+
+// this opens a window with the question and a space for the answer. If you get it right, there is an alert that tells you so. Same thing if you got it wrong
+for (var i = 0; i < questions.length; i++) {
+  var response = window.prompt(questions[i].prompt);
+  if (response == questions[i].answer) {
+    score++;
+    alert("Correct");
+  } else {
+    alert("Wrong");
+  }
+}
+
+// this alert tells you the amount of questions you got correct out of the total amount of questions
+
+alert("You got " + score + "/" + questions.length);
+
+},{}]},["1ZwPL","3L8AI"], "3L8AI", "parcelRequire0a55")
 
 //# sourceMappingURL=index.2142d36c.js.map

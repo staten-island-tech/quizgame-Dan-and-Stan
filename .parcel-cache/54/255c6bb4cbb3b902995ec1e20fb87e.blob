@@ -1,0 +1,5 @@
+body {
+  background: url("6952d72e4224b4b70d62087996f0fde1");
+  background-size: cover;
+  background-position: center;
+}
