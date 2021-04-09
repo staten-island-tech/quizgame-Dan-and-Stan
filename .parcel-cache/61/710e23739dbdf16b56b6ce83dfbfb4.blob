@@ -1,7 +1,0 @@
-console.log("connected");
-
-var questions = [
-  {
-    prompt: "What color are oranges?\n(a)
-  },
-];

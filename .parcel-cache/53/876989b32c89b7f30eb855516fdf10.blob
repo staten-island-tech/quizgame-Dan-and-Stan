@@ -1,6 +1,0 @@
-console.log("connected");
-
-var questions = [
-    { 
-        prompt: 
-    }];
