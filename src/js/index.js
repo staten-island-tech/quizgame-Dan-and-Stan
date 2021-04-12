@@ -14,7 +14,7 @@ const question = {
 };
 
 const question2 = {
-  questionContent: "Mace Windu has the only purple lightsaber in Star Wars",
+  questionContent: "Obi-Wan Kenobi is Han Solo's father",
   value: 1,
   choices: [
     {
