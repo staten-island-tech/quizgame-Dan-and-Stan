@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz Game</title>
-    
+    <title>Super Duper Chess Quiz</title>
 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="./scss/main.scss">
 </head>
 <body>
 
-    <div class="container-1">
-
-    <h2>Question 1</h2>
-   <div class="flex-box-container-1">
-    <div>
-    <button class="btn btn-primary">True</button>
+    <h1>Super Duper Chess Quiz</h1>
+    <div class="quiz-container">
+      <div id="quiz"></div>
     </div>
-    <div>
-    <button class="btn btn-danger">False</button>
-    </div>
-    </div>
-</div>
+    <button id="previous">Previous Question</button>
+    <button id="next">Next Question</button>
+    <button id="submit">Submit Quiz</button>
+    <div id="results"></div>
     <script src="./js/index.js"></script>
 </body>
 </html>

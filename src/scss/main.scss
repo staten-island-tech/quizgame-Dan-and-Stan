@@ -1,18 +1,73 @@
-.flex-box-container-1 {
-  display: flex;
-  border: 1px solid black;
-  padding: 10px;
-  justify-content: space-around;
+body {
+  font-size: 20px;
+  font-family: "Libre Baskerville", serif;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  text-align: center;
+  background-image: url(/img/chess.jpg);
+  background-size: cover;
+}
+h1 {
+  font-weight: 300;
+  padding: 1.5rem;
+  font-size: 20px;
+  background-color: rgb(0, 0, 0);
+  color: #fff;
+}
+.question {
+  font-size: 30px;
+  margin-bottom: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-left: 25rem;
+  margin-right: 25rem;
+  padding: 1rem;
+}
+.answers {
+  margin-bottom: 20px;
+  text-align: left;
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2rem;
+}
+.answers label {
+  display: block;
+  margin-bottom: 10px;
+}
+button {
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.5rem;
+  background-color: black;
+  color: #fff;
+  border: 0;
+  border-radius: 0.3rem;
+  padding: 2rem;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  margin-top: 5rem;
+}
+button:hover {
+  background-color: rgb(44, 44, 44);
 }
 
-.flex-box-container-1 div {
-  display: flex;
-  padding: 10px;
-  border: 1px solid black;
-  align-items: center;
+.page {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+.active-page {
+  opacity: 1;
+  z-index: 2;
+}
+.quiz-container {
+  position: relative;
+  height: 200px;
+  margin-top: 40px;
 }
 
-h2 {
-  display: flex;
-  justify-content: center;
+#results {
+  font-size: 2rem;
 }

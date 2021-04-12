@@ -1,149 +1,149 @@
-const question = {
-  questionContent: "Darth Vader says, 'Luke, I am your Father'",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: false,
-    },
-    {
-      choiceContent: "False",
-      correct: true,
-    },
-  ],
-};
+function buildQuiz() {
+  // stores the html output
+  const output = [];
 
-const question2 = {
-  questionContent: "Obi-Wan Kenobi is Han Solo's father",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: false,
-    },
-    {
-      choiceContent: "False",
-      correct: true,
-    },
-  ],
-};
+  // for each question...
+  questions.forEach((currentQuestion, questionNumber) => {
+    // stores possible answers
+    const answers = [];
 
-const question3 = {
-  questionContent: "Rey is a Skywalker",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: false,
-    },
-    {
-      choiceContent: "False",
-      correct: true,
-    },
-  ],
-};
+    for (letter in currentQuestion.answers) {
+      // this adds a button that gives options
+      answers.push(
+        `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+      );
+    }
 
-const question4 = {
-  questionContent: "Darth Maul dies in Episode I",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: false,
-    },
-    {
-      choiceContent: "False",
-      correct: true,
-    },
-  ],
-};
+    // adds the questions and answers to the output
+    output.push(
+      `<div class="page">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          </div>`
+    );
+  });
 
-const question5 = {
-  questionContent: "Mace Windu has the only purple lightsaber in Star Wars",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: false,
-    },
-    {
-      choiceContent: "False",
-      correct: true,
-    },
-  ],
-};
+  // actually displays the quiz in html
+  quizContainer.innerHTML = output.join("");
+}
 
-const question6 = {
-  questionContent: "Emporer Palpatine's first name is Sheev",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: true,
-    },
-    {
-      choiceContent: "False",
-      correct: false,
-    },
-  ],
-};
+function showResults() {
+  // gathers answer containers from our quiz
+  const answerContainers = quizContainer.querySelectorAll(".answers");
 
-const question7 = {
-  questionContent: "Anakin is the chosen one",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: true,
-    },
-    {
-      choiceContent: "False",
-      correct: false,
-    },
-  ],
-};
+  // keeps track of user's answers
+  let numCorrect = 0;
 
-const question8 = {
-  questionContent: "General Grevious is a droid",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: false,
-    },
-    {
-      choiceContent: "False",
-      correct: true,
-    },
-  ],
-};
+  // for each question
+  questions.forEach((currentQuestion, questionNumber) => {
+    // finds selected answer
+    const answerContainer = answerContainers[questionNumber];
+    const selector = `input[name=question${questionNumber}]:checked`;
+    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-const question9 = {
-  questionContent: "Anakin reached the rank of master",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: false,
-    },
-    {
-      choiceContent: "False",
-      correct: true,
-    },
-  ],
-};
+    // if the answer is correct
+    if (userAnswer === currentQuestion.correctAnswer) {
+      // adds to the number of correct answers
+      numCorrect++;
+    }
+  });
 
-const question10 = {
-  questionContent: "Han Solo flew the Kessel run in 12 parsecs",
-  value: 1,
-  choices: [
-    {
-      choiceContent: "True",
-      correct: true,
+  // shows number of correct answers out of total
+  resultsContainer.innerHTML = `${numCorrect} out of ${questions.length}`;
+}
+
+// puts each question on its own page in order to go back and forth between questions
+function showPage(n) {
+  pages[currentPage].classList.remove("active-page");
+  pages[n].classList.add("active-page");
+  currentPage = n;
+  if (currentPage === 0) {
+    previousButton.style.display = "none";
+  } else {
+    previousButton.style.display = "inline-block";
+  }
+  if (currentPage === pages.length - 1) {
+    nextButton.style.display = "none";
+    submitButton.style.display = "inline-block";
+  } else {
+    nextButton.style.display = "inline-block";
+    submitButton.style.display = "none";
+  }
+}
+
+// allows to go to the next question
+function showNextPage() {
+  showPage(currentPage + 1);
+}
+
+// allows to go to the previous question
+function showPreviousPage() {
+  showPage(currentPage - 1);
+}
+
+// container around entire quiz
+const quizContainer = document.getElementById("quiz");
+
+// container for results
+const resultsContainer = document.getElementById("results");
+
+// submit button
+const submitButton = document.getElementById("submit");
+
+// Quiz questions
+const questions = [
+  {
+    question: "Who is the current chess world champion?",
+    answers: {
+      a: "Magnus Carlson",
+      b: "Hikaru Nakamura",
+      c: "Lex Luthor",
     },
-    {
-      choiceContent: "False",
-      correct: false,
+    correctAnswer: "a",
+  },
+  {
+    question: "Which two pieces are involved in castling?",
+    answers: {
+      a: "Knight and Samurai",
+      b: "Queen and Rook",
+      c: "King and Rook",
     },
-  ],
-};
+    correctAnswer: "c",
+  },
+  {
+    question: "How many squares are on a chess board?",
+    answers: {
+      a: "2084",
+      b: "64",
+      c: "21",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question: "What is the winning move called?",
+    answers: {
+      a: "Checkmate",
+      b: "Checkmark",
+      c: "You're trash kid",
+    },
+    correctAnswer: "a",
+  },
+];
+
+buildQuiz();
+
+// allows the user to go back and forth through the pages
+const previousButton = document.getElementById("previous");
+const nextButton = document.getElementById("next");
+const pages = document.querySelectorAll(".page");
+let currentPage = 0;
+
+showPage(currentPage);
+
+submitButton.addEventListener("click", showResults);
+previousButton.addEventListener("click", showPreviousPage);
+nextButton.addEventListener("click", showNextPage);
