@@ -75,14 +75,14 @@ const questions = [
     answers: {
       a: "Checkmate",
       b: "Checkmark",
-      c: "You're trash kid",
+      c: "Shazam",
     },
     correctAnswer: "a",
   },
   {
     question: "What FIDE rating is required for the title Fide Master(FM)",
     answers: {
-      a: "4 mph",
+      a: "2200",
       b: "2300",
       c: "2400",
     },
