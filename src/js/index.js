@@ -45,6 +45,7 @@ function displayquestion(number) {
     question3.style.visibility = "hidden";
     mainquestion.style.visibility = "hidden";
     results.style.fontSize = "400%";
+    results.style.alignContent = "center";
   } else {
     question1.innerText = questions[number].answers.a;
     question2.innerText = questions[number].answers.b;
