@@ -48,14 +48,14 @@ const questions = [
     answers: {
       a: "Magnus Carlsen",
       b: "Hikaru Nakamura",
-      c: "Lex Luthor",
+      c: "Lady Gaga",
     },
     correctAnswer: "a",
   },
   {
     question: "Which two pieces are involved in castling?",
     answers: {
-      a: "Knight and Samurai",
+      a: "Carl and Robert",
       b: "Queen and Rook",
       c: "King and Rook",
     },
@@ -75,14 +75,14 @@ const questions = [
     answers: {
       a: "Checkmate",
       b: "Checkmark",
-      c: "Shazam",
+      c: "You're trash kid",
     },
     correctAnswer: "a",
   },
   {
     question: "What FIDE rating is required for the title Fide Master(FM)",
     answers: {
-      a: "2200",
+      a: "4 mph",
       b: "2300",
       c: "2400",
     },
@@ -102,7 +102,7 @@ const questions = [
     answers: {
       a: "Checkmate",
       b: "Stalemate",
-      c: "Shazam",
+      c: "What's up mate",
     },
     correctAnswer: "b",
   },
@@ -125,7 +125,7 @@ const questions = [
     correctAnswer: "a",
   },
   {
-    question: "What is a very bad move called?",
+    question: "What is a very bad move called in chess?",
     answers: {
       a: "Innacurracy",
       b: "Mistake",
