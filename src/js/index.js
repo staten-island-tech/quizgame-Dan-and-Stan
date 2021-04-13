@@ -10,7 +10,7 @@ function buildQuiz() {
     for (letter in currentQuestion.answers) {
       // this adds a button that gives options
       answers.push(
-        `<label>
+        `<label>    
               <input type="radio" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
