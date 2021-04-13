@@ -127,7 +127,7 @@ const questions = [
   {
     question: "What is a very bad move called in chess?",
     answers: {
-      a: "Innacurracy",
+      a: "Screw Up",
       b: "Mistake",
       c: "Blunder",
     },
