@@ -14,21 +14,16 @@ h1 {
   background-color: rgb(0, 0, 0);
   color: #fff;
 }
-.question {
-  font-size: 30px;
-  margin-bottom: 10px;
-  background-color: rgba(255, 255, 255, 0.5);
-  margin-left: 25rem;
-  margin-right: 25rem;
-  padding: 1rem;
-}
-.answers {
-  margin-bottom: 20px;
-  text-align: left;
-  display: inline-block;
-  background-color: rgba(255, 255, 255, 0.5);
+
+#main-question {
+  background-color: rgba(219, 219, 219, 0.5);
+  margin-top: 5rem;
+  font-size: 3rem;
   padding: 2rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
 }
+
 .answers label {
   display: block;
   margin-bottom: 10px;
@@ -43,25 +38,11 @@ button {
   padding: 2rem;
   cursor: pointer;
   margin-bottom: 2rem;
-  margin-top: 5rem;
 }
 button:hover {
   background-color: rgb(44, 44, 44);
 }
 
-.page {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 100%;
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.5s;
-}
-.active-page {
-  opacity: 1;
-  z-index: 2;
-}
 .quiz-container {
   position: relative;
   height: 200px;
