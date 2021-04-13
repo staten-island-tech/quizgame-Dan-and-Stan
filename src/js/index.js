@@ -1,100 +1,47 @@
-function buildQuiz() {
-  // stores the html output
-  const output = [];
+const question1 = document.getElementById("answer1");
+const question2 = document.getElementById("answer2");
+const question3 = document.getElementById("answer3");
+const mainquestion = document.getElementById("main-question");
+const results = document.getElementById("results");
+question1.addEventListener("click", answer1);
+question2.addEventListener("click", answer2);
+question3.addEventListener("click", answer3);
+let score = 0;
+let questionnumber = 0;
 
-  // for each question...
-  questions.forEach((currentQuestion, questionNumber) => {
-    // stores possible answers
-    const answers = [];
-
-    for (letter in currentQuestion.answers) {
-      // this adds a button that gives options
-      answers.push(
-        `<label>    
-              <input type="radio" name="question${questionNumber}" value="${letter}">
-              ${letter} :
-              ${currentQuestion.answers[letter]}
-            </label>`
-      );
-    }
-
-    // adds the questions and answers to the output
-    output.push(
-      `<div class="page">
-            <div class="question"> ${currentQuestion.question} </div>
-            <div class="answers"> ${answers.join("")} </div>
-          </div>`
-    );
-  });
-
-  // actually displays the quiz in html
-  quizContainer.innerHTML = output.join("");
-}
-
-function showResults() {
-  // gathers answer containers from our quiz
-  const answerContainers = quizContainer.querySelectorAll(".answers");
-
-  // keeps track of user's answers
-  let numCorrect = 0;
-
-  // for each question
-  questions.forEach((currentQuestion, questionNumber) => {
-    // finds selected answer
-    const answerContainer = answerContainers[questionNumber];
-    const selector = `input[name=question${questionNumber}]:checked`;
-    const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-
-    // if the answer is correct
-    if (userAnswer === currentQuestion.correctAnswer) {
-      // adds to the number of correct answers
-      numCorrect++;
-    }
-  });
-
-  // shows number of correct answers out of total
-  resultsContainer.innerHTML = `${numCorrect} out of ${questions.length}`;
-}
-
-// puts each question on its own page in order to go back and forth between questions
-function showPage(n) {
-  pages[currentPage].classList.remove("active-page");
-  pages[n].classList.add("active-page");
-  currentPage = n;
-  if (currentPage === 0) {
-    previousButton.style.display = "none";
-  } else {
-    previousButton.style.display = "inline-block";
+function answer1() {
+  if (questions[questionnumber].correctAnswer === "a") {
+    score += 1;
   }
-  if (currentPage === pages.length - 1) {
-    nextButton.style.display = "none";
-    submitButton.style.display = "inline-block";
-  } else {
-    nextButton.style.display = "inline-block";
-    submitButton.style.display = "none";
+  questionnumber += 1;
+
+  displayquestion(questionnumber);
+}
+
+function answer2() {
+  if (questions[questionnumber].correctAnswer === "b") {
+    score += 1;
   }
+  questionnumber += 1;
+
+  displayquestion(questionnumber);
 }
 
-// allows to go to the next question
-function showNextPage() {
-  showPage(currentPage + 1);
+function answer3() {
+  if (questions[questionnumber].correctAnswer === "c") {
+    score += 1;
+  }
+  questionnumber += 1;
+
+  displayquestion(questionnumber);
 }
-
-// allows to go to the previous question
-function showPreviousPage() {
-  showPage(currentPage - 1);
+function displayquestion(number) {
+  question1.innerText = questions[number].answers.a;
+  question2.innerText = questions[number].answers.b;
+  question3.innerText = questions[number].answers.c;
+  mainquestion.innerText = questions[number].question;
+  results.innerText = "Your score is " + score + " out of " + number;
 }
-
-// container around entire quiz
-const quizContainer = document.getElementById("quiz");
-
-// container for results
-const resultsContainer = document.getElementById("results");
-
-// submit button
-const submitButton = document.getElementById("submit");
-
-// Quiz questions
 const questions = [
   {
     question: "Who is the current chess world champion?",
@@ -187,17 +134,4 @@ const questions = [
     correctAnswer: "c",
   },
 ];
-
-buildQuiz();
-
-// allows the user to go back and forth through the pages
-const previousButton = document.getElementById("previous");
-const nextButton = document.getElementById("next");
-const pages = document.querySelectorAll(".page");
-let currentPage = 0;
-
-showPage(currentPage);
-
-submitButton.addEventListener("click", showResults);
-previousButton.addEventListener("click", showPreviousPage);
-nextButton.addEventListener("click", showNextPage);
+displayquestion(questionnumber);
