@@ -99,7 +99,7 @@ const questions = [
   {
     question: "Who is the current chess world champion?",
     answers: {
-      a: "Magnus Carlson",
+      a: "Magnus Carlsen",
       b: "Hikaru Nakamura",
       c: "Lex Luthor",
     },
@@ -128,9 +128,63 @@ const questions = [
     answers: {
       a: "Checkmate",
       b: "Checkmark",
-      c: "You're trash kid",
+      c: "Shazam",
     },
     correctAnswer: "a",
+  },
+  {
+    question: "What FIDE rating is required for the title Fide Master(FM)",
+    answers: {
+      a: "2200",
+      b: "2300",
+      c: "2400",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question: "What is the most popular response to 1.e4?",
+    answers: {
+      a: "e5",
+      b: "e6",
+      c: "c5",
+    },
+    correctAnswer: "c",
+  },
+  {
+    question: "What is a draw?",
+    answers: {
+      a: "Checkmate",
+      b: "Stalemate",
+      c: "Shazam",
+    },
+    correctAnswer: "b",
+  },
+  {
+    question: "How many forms of castling are there?",
+    answers: {
+      a: "Short Castling",
+      b: "Long Castling",
+      c: "Both",
+    },
+    correctAnswer: "c",
+  },
+  {
+    question: "What is the most popular first move?",
+    answers: {
+      a: "e4",
+      b: "d4",
+      c: "c4",
+    },
+    correctAnswer: "a",
+  },
+  {
+    question: "What is a very bad move called?",
+    answers: {
+      a: "Innacurracy",
+      b: "Mistake",
+      c: "Blunder",
+    },
+    correctAnswer: "c",
   },
 ];
 
