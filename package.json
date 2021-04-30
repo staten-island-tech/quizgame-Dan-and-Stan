@@ -6,7 +6,6 @@
   },
   "name": "quizgame-Dan-and-Stan",
   "version": "1.0.0",
-  "main": "index.js",
   "dependencies": {
     "abab": "^2.0.5",
     "abortcontroller-polyfill": "^1.7.1",
